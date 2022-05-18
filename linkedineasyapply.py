@@ -61,7 +61,7 @@ class LinkedinEasyApply:
         random.shuffle(searches)
 
         page_sleep = 0
-        minimum_time = 60*15
+        minimum_time = 60
         minimum_page_time = time.time() + minimum_time
 
         for (position, location) in searches:
@@ -121,11 +121,11 @@ class LinkedinEasyApply:
             raise Exception("No more jobs on this page")
 
         try:
-            job_results = self.browser.find_element_by_class_name("jobs-search-results")
+            job_results = self.browser.find_element_by_class_name("jobs-search-results-list")
             self.scroll_slow(job_results)
             self.scroll_slow(job_results, step=300, reverse=True)
 
-            job_list = self.browser.find_elements_by_class_name('jobs-search-results__list')[0].find_elements_by_class_name('jobs-search-results__list-item')
+            job_list = self.browser.find_elements_by_class_name('scaffold-layout__list-container')[0].find_elements_by_class_name('jobs-search-results__list-item')
         except:
             raise Exception("No more jobs on this page")
 

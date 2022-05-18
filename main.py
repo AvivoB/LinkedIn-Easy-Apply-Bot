@@ -43,13 +43,13 @@ def validate_yaml():
 
     assert isinstance(parameters['remote'], bool)
 
-    assert len(parameters['experienceLevel']) > 0
+    """ assert len(parameters['experienceLevel']) > 0
     experience_level = parameters.get('experienceLevel', [])
     at_least_one_experience = False
     for key in experience_level.keys():
         if experience_level[key]:
             at_least_one_experience = True
-    assert at_least_one_experience
+    assert at_least_one_experience """
 
     assert len(parameters['jobTypes']) > 0
     job_types = parameters.get('jobTypes', [])
